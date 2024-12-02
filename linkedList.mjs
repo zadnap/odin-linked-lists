@@ -3,7 +3,7 @@ class LinkedList {
 
   append(value) {
     if (this.root === null) {
-      this.root = { value, next: null };
+      this.root = new Node(value, null);
       return;
     }
 
@@ -11,12 +11,12 @@ class LinkedList {
     while (currentNode.next !== null) {
       currentNode = currentNode.next;
     }
-    currentNode.next = { value, next: null };
+    currentNode.next = new Node(value, null);
   }
 
   prepend(value) {
     const firstNodeRef = this.root;
-    this.root = { value, next: firstNodeRef };
+    this.root = new Node(value, firstNodeRef);
   }
 
   size() {
